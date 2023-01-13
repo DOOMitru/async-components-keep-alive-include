@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <h1>HomeView</h1>
+        <input v-model="text" />
+    </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script setup>
+import { ref, onMounted, onUnmounted, onActivated, onDeactivated } from 'vue'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+const text = ref('')
+
+onMounted(() => console.log('HomeView onMounted...'))
+onActivated(() => console.log('HomeView onActivated...'))
+
+onDeactivated(() => console.log('HomeView onDeactivated...'))
+onUnmounted(() => console.log('HomeView onUnmounted...'))
 </script>
